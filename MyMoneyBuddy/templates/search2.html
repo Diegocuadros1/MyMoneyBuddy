@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+    Search
+{% endblock %}
+{% block main %}
+
+<section style="align-items: center; text-align: center;">
+
+    <h1>Search for an expense that you have added</h1>
+
+    {% for item in list_of_results %}
+
+        {% if item.type == 'expense' %}
+        <div class="expense-red items">
+          <h3>Category: {{ item.category }} | price: {{ item.price }} | description: {{ item.description }} | date: {{ item.date }} </h3>
+        </div>
+        {% endif %}
+
+        {% if item.type == 'gain' %}
+        <div class="gain-green items">
+            <h3>Category: {{ item.category }} | price: {{ item.price }} | description: {{ item.description }} | date: {{ item.date }} </h3>
+        </div>
+        {% endif %}
+
+    {% endfor %}
+
+
+</section>
+
+
+
+{% endblock %}

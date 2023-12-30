@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+  <section class="savings-page">
+
+    <div>
+        <h1>Your Savings</h1>
+    </div>
+
+    <container class="savings">
+
+      <div>
+        You are saving {{ saving_percent }}%
+      </div>
+
+      <div>
+        You have saved {{ savings }}
+      </div>
+
+    </container>
+
+    <div>
+      <h3>Change your savings:</h3>
+      <form class="login-form" action="/savings" method="post">
+        <div>
+          <input autocomplete="off" class="savings-amt" name=savings placeholder="savings-amt%" type="number">
+        </div>
+        <button type="submit" class="submit-savings">Add as savings</button>
+      </form>
+    </div>
+
+  </section>
+
+{% endblock %}

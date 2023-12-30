@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block main %}
+  <section class="add-page">
+
+    <div style="align-items: center; text-align: center;">
+        <h1>Add an expense / income</h1>
+    </div>
+
+    <form class="login-form" action="/add" method="post">
+        <select required class="select-expense-drop" style="align-items: center; margin-bottom: 10px;" name="add">
+          <option disabled selected>Expense or Gain?</option>
+          <option value="expense">Expense</option>
+          <option value="gain">Gain</option>
+        </select>
+        <div>
+            <input id="price-amt" name="price" placeholder="Amount" type="number" required>
+        </div>
+        <div>
+          <input id="category" name="category" placeholder="Category" type="text" required>
+        </div>
+        <div>
+          <textarea id="text-area" rows="3" name="description" required type="text" placeholder="Description"></textarea>
+        </div>
+        <button type="submit" style="margin-bottom: 10px;">Update expense</button>
+    </form>
+
+  </section>
+
+{% endblock %}

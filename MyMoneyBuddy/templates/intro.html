@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+    intro
+{% endblock %}
+{% block main %}
+  <section class="intro-page">
+    <div>
+        <h1>Pick your savings amount and starting total</h1>
+    </div>
+        <form class="login-form" method="post" action="/intro">
+            <div>
+                <input autocomplete="off" autofocus id="username" name="savings" placeholder="Savings" type="number">
+            </div>
+            <div>
+                <input autocomplete="off" autofocus id="username" name="total" placeholder="Startin Total" type="number">
+            </div>
+            <button type="submit">Submit Amounts</button>
+        </form>
+    </div>
+  </section>
+{% endblock %}

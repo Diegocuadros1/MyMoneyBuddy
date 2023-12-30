@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+{% block chart %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    let sql_list = {{ my_list | tojson | safe }};
+    sql_list.unshift(["Category", "Amount", {role: "style"}]);
+    var data = google.visualization.arrayToDataTable(sql_list);
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+                     { calc: "stringify",
+                       sourceColumn: 1,
+                       type: "string",
+                       role: "annotation" },
+                     2]);
+    var options = {
+      title: "Your total spendings by category",
+      width: 600,
+      height: 400,
+      bar: {groupWidth: "95%"},
+      legend: { position: "none" },
+    };
+    var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+    chart.draw(view, options);
+}
+</script>
+{% endblock %}
+
+{% block main %}
+  <section class="index-page" >
+
+    <div class="home">
+        <h1>Home</h1>
+    </div>
+
+    <container class="home-display" >
+      <h2>Bar graph displaying the amount you spend on each category</h2>
+      <div class="bar-graph">
+        <div id="barchart_values" class="chart""></div>
+        <div class="info-home">
+          <div class="info-home-box">
+            <p class="first-p"><b>Total Amount of money you have: ${{ total }} </b></p>
+            <p><b>How much is in your savings: ${{ savings }} </b></p>
+            <p><b>Your most spent category: {{ most_spent }} at {{ percent }} </b><p>
+            <form action="/" method="POST">
+              <button class="switch-button" type="submit">Switch to actual dollar amount</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </container>
+
+  </section>
+
+{% endblock %}
+<!--
+["Category", "Amount", { role: "style" } ],
+["Copper", 8.94, "#b87333"],
+["Silver", 10.49, "silver"],
+["Gold", 19.30, "gold"],
+["Platinum", 21.45, "#e5e4e2"]
+-->

@@ -1,0 +1,445 @@
+/* Starting page for when people first go to the website and they are not logged in*/
+body {
+  overflow-x: hidden;
+  background-image: url('cool-mountain.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 35%;
+  padding: 5px;
+}
+
+.login-registering {
+  display: flex;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.starter-block {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.4);
+  margin-left: 400px;
+  margin-right: 400px;
+  border: 2px solid white;
+  color: white;
+}
+
+.starter-block a {
+  color: black;
+  text-decoration: none;
+}
+
+/*Navbar*/
+.flex {
+  display: flex;
+  gap: var(--gap, 2rem);
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.primary-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  background: hsl(0 0% 70% / 0.3);
+  backdrop-filter: blur(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.logo {
+  margin: 1rem;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  color: white;
+}
+
+/* For mobile uses */
+@media (max-width: 35em) {
+  .primary-navigation {
+
+    position: fixed;
+    inset: 0 0 0 50%;
+    list-style-type: disc;
+    color: white;
+    z-index: 1000;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 3rem;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background: url("hambuger-menu.png");
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+
+
+  }
+}
+
+@media (min-width: 35em) {
+  .primary-navigation {
+    --gap: 3rem;
+    padding-block: 1.5rem;
+    padding-inline: clamp(2rem, 10vw, 10rem);
+  }
+}
+
+/* login page */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 45vh;
+  border: 2px solid black;
+  margin-top: 30px;
+  margin-left: 38%;
+  margin-right: 35%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  position: relative;
+  left: 25px;
+}
+
+
+.login-page h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.login-form {
+  text-align: center;
+  align-items: center;
+}
+
+.login-form div{
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.login-form button {
+  padding: 10px 0;
+  color: #000;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  width: 50%;
+  cursor: pointer;
+}
+
+.login-form input, textarea {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #000;
+  color: #000;
+  background: transparent;
+  font-size: 15px;
+}
+
+.login-form select {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #000;
+  color: #000;
+  background: transparent;
+  font-size: 15px;
+  position: relative;
+  left: 10px;
+}
+
+/* Register */
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 55vh;
+  border: 2px solid black;
+  margin-top: 30px;
+  margin-left: 38%;
+  margin-right: 30%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  position: relative;
+  left: 25px;
+}
+
+/* intro */
+.intro-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 45vh;
+  border: 2px solid black;
+  margin-top: 30px;
+  margin-left: 35%;
+  margin-right: 30%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  position: relative;
+  left: 25px;
+  text-align: center;
+}
+/*savings*/
+
+.savings-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 55vh;
+  border: 2px solid black;
+  margin-top: 30px;
+  margin-left: 38%;
+  margin-right: 30%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  position: relative;
+  left: 25px;
+}
+
+.savings-page h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.savings {
+  text-align: center;
+  align-items: center;
+}
+.savings div {
+  padding-top: 20px;
+  border-bottom: 2px solid black;
+}
+
+.submit-savings button{
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* search */
+.search-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 30vh;
+  border: 2px solid black;
+  margin-top: 30px;
+  margin-left: 38%;
+  margin-right: 30%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  position: relative;
+  left: 25px;
+  text-align: center;
+}
+
+.search-page h1 {
+  padding-bottom: 10px;
+}
+
+/* home page and chart */
+.home-display{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  margin-top: 50px;
+}
+
+
+.home {
+  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.7);
+  align-items: center;
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.home h1 {
+  border-bottom: 2px solid black;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.bar-graph {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 100px;
+}
+.chart {
+  position: relative;
+  left: 150px;
+  margin-bottom: 20px;
+}
+.info-home {
+  position: relative;
+  align-items: center;
+  text-align: left;
+  font-size: 23px;
+  border: 2px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+  margin-bottom: 200px;
+  top: 80px;
+  left: 200px;
+}
+
+.info-home-box {
+  position: relative;
+
+}
+
+.switch-button {
+  padding: 10px 0;
+  color: #000;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  width: 50%;
+  cursor: pointer;
+  position: relative;
+  left: 100px;
+}
+
+/* Add */
+.add-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 55vh;
+  border: 2px solid black;
+  margin-top: 30px;
+  margin-left: 38%;
+  margin-right: 30%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  position: relative;
+  left: 25px;
+}
+.add-page h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
+/*history */
+.history-intro {
+  text-align: center;
+}
+.history-page {
+  align-items: center;
+  text-align: center;
+}
+
+.items {
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.gain-green {
+  background-color: rgba(158, 200, 185, 0.7);
+}
+
+.expense-red {
+  background-color: rgba(244, 166, 152, 0.7);
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+footer div {
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  border-radius: 30px;
+  border: 2px solid white;
+  margin-top: 130px;
+}
+
+/* extra stuff */
+.tracking-in-expand {
+  -webkit-animation: tracking-in-expand 1.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+          animation: tracking-in-expand 1.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  font-weight: bold;
+}
+

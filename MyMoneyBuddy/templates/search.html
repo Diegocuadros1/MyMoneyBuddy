@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}
+    Search
+{% endblock %}
+{% block main %}
+
+<section class="search-page">
+
+    <h1>Search for an expense that you have added</h1>
+
+    <form action="/search" method="post">
+        <input name="category" type="text" required>
+        <button type="submit">Search</button>
+    </form>
+
+</section>
+
+
+
+{% endblock %}

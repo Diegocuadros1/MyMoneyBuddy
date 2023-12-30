@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+    History
+{% endblock %}
+{% block main %}
+    <div class="history-intro">
+      <h1>Your history</h1>
+    </div>
+    <div class="history-page">
+      {% for item in expenses %}
+
+        {% if item.type == 'expense' %}
+          <div class="expense-red items">
+            <h3>Category: {{ item.category }} | price: {{ item.price }} | description: {{ item.description }} | date: {{ item.date }} </h3>
+          </div>
+        {% endif %}
+
+        {% if item.type == 'gain' %}
+        <div class="gain-green items">
+          <h3>Category: {{ item.category }} | price: {{ item.price }} | description: {{ item.description }} | date: {{ item.date }} </h3>
+        </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+{% endblock %}

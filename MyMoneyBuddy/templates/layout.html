@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <title>MMB Financial Assistant: {% block title %}{% endblock %} </title>
+    <script src="/static/nav.js" defer></script>
+    {% block chart %}{% endblock %}
+  </head>
+
+  <body>
+    {% if session["user_id"] %}
+      <header class="primary-header flex">
+        <a href="/">
+          <img src="/static/MMB-logo.png" alt="logo" class="logo">
+        </a>
+
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <nav class="navbar">
+          <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+            <li>
+              <a href="/add">Update Expenses</a>
+            </li>
+            <li>
+              <a href="/history">History</a>
+            </li>
+            <li>
+              <a href="/savings">Savings</a>
+            </li>
+            <li>
+              <a href="/search">Search</a>
+            </li>
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    {% else %}
+
+      <section class="loging-registering">
+
+        <div class="starter-block">
+          <h1 class="tracking-in-expand">Welcome to My Money Buddy Financial Budgeting!</h1>
+        </div>
+
+      </section>
+
+    {% endif %}
+
+    <main>
+
+      {% block main %}{% endblock %}
+
+    </main>
+
+    <footer class="footer">
+      <div>
+        <h3>Made by Diego Cuadros</h3>
+      </div>
+    </footer>
+
+
+  </body>
+
+</html>
